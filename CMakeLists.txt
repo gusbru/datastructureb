@@ -3,4 +3,4 @@ project(Programs)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Programs main.cpp)
+add_executable(Programs main.cpp lib/Bubble/Bubble.cpp)

@@ -2,19 +2,20 @@
 #ifndef __BUBBLE_H_INCLUDED__
 #define __BUBBLE_H_INCLUDED__
 
-class Bubble
+#include <iostream>
+#include "../Array/Array.h"
+
+class Bubble: public Array
 {
 public:
-  Bubble(int N);
-  ~Bubble();
+    Bubble(int N);
+    ~Bubble();
 
-  // sort function
-  void sort();
-  void printVector();
+    // sort function
+    void sort();
+    
 
-private:
-  int *v;
-  int N, tmp;
+
 };
 
-#endif __BUBBLE_H_INCLUDED__
+#endif //__BUBBLE_H_INCLUDED__
