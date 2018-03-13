@@ -5,15 +5,16 @@
 #include <iostream>
 #include "../Array/Array.h"
 
-class Bubble: public Array
-{
+class Bubble : public Array {
+private:
+    bool switched;
+    int N;
+
 public:
-    Bubble(int N);
-    ~Bubble();
+    Bubble(int length);
 
     // sort function
-    void sort();
-    
+    void sort() override;
 
 
 };

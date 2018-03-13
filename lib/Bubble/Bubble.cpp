@@ -1,50 +1,27 @@
 #include "Bubble.h"
 
 // constructor
-Bubble::Bubble(int N) {
-    this->N = N;
-    v = new int[N];
-    this->switched = true;
+Bubble::Bubble(int length) : Array(length) {
+    this->N = length;
 }
 
-// destructor
-Bubble::~Bubble() {
-    delete[] v;
-}
-
-// sort a vector v
+// sort
 void Bubble::sort() {
+    this->switched = true;
+    Array::resetStatistics();
+
     for (int i = 0; i < (N - 1) && switched; ++i) {
 
         switched = false;
 
         for (int j = 0; j < (N - i - 1); ++j) {
-            if (v[j] > v[j + 1]) {
+            Array::incrComparisons();
+
+            if (Array::getItem(j) > Array::getItem(j + 1)) {
                 switched = true;
-                tmp = v[j + 1];
-                v[j + 1] = v[j];
-                v[j] = tmp;
+                Array::swapItems(j, j + 1);
+                Array::incrSwaps();
             }
         }
     }
-}
-
-void Bubble::sortNotEfficient() {
-    for (int i = 0; i < (N - 1); ++i) {
-        for (int j = 0; j < (N - 1); ++j) {
-            if (v[j] > v[j + 1]) {
-                tmp = v[j + 1];
-                v[j + 1] = v[j];
-                v[j] = tmp;
-            }
-        }
-    }
-}
-
-// print the vector
-void Bubble::printVector() {
-    for (int i = 0; i < N; ++i) {
-        std::cout << v[i] << " ";
-    }
-    std::cout << std::endl;
 }
