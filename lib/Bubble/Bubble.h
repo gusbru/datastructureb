@@ -1,4 +1,5 @@
 /** Bubble Sort.
+ * 
  * Compare the neighbors and swap then when necessary.
  * 
  */
