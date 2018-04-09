@@ -8,6 +8,7 @@ Quick::Quick(int N) : Array(N)
 
 void Quick::sort()
 {
+  Array::resetStatistics();
   Quick::sort(0, this->N);
 }
 
@@ -20,13 +21,21 @@ void Quick::sort(int esq, int dir)
   do
   {
     while (Array::getItem(i) < pivo)
+    {
       i++;
+      Array::incrComparisons();
+    }
+
     while (Array::getItem(j) > pivo)
+    {
       j--;
+      Array::incrComparisons();
+    }
 
     if (i <= j)
     {
       Array::swapItems(i, j);
+      Array::incrSwaps();
       i++;
       j--;
     }
