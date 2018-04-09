@@ -1,4 +1,5 @@
-/** Quick Sort
+/** Quick Sort.
+ * 
  * E o algoritmo de ordenacao mais rapido (em media).
  * Consistem em tomar um elemento aleatorio da sequencia (pivo)
  * e particionar os elementos em duas subsequencias:
@@ -16,14 +17,14 @@
 
 class Quick : public Array
 {
+private:
+  int pivo, N;
+  int i, j;
+
 public:
   Quick(int N);
   void sort() override;
   void sort(int esq, int dir);
-
-private:
-  int pivo, N;
-  int i, j;
 };
 
 #endif // QUICK_H_INCLUDED__
