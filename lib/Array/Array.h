@@ -5,15 +5,16 @@
 #include <string>
 #include <random>
 
-class Array {
-private:
+class Array
+{
+  private:
     int length, nComparisons, nSwaps;
     int *array;
 
-//protected:
-//    int *array;
+    //protected:
+    //    int *array;
 
-public:
+  public:
     Array(int length);
 
     ~Array();
@@ -24,7 +25,7 @@ public:
 
     void fillReverseOrdered();
 
-    virtual void sort()= 0;
+    virtual void sort() = 0;
 
     void swapItems(int i, int j);
 
@@ -43,7 +44,6 @@ public:
     int getComparisons();
 
     int getSwaps();
-
 };
 
 #endif //__ARRAY_H_INCLUDED__
