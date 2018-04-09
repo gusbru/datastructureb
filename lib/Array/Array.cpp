@@ -102,3 +102,8 @@ int Array::getSwaps()
 {
     return this->nSwaps;
 }
+
+void Array::setItem(int index, int item)
+{
+    array[index] = item;
+}

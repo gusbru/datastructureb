@@ -44,6 +44,8 @@ class Array
     int getComparisons();
 
     int getSwaps();
+
+    void setItem(int index, int item);
 };
 
 #endif //__ARRAY_H_INCLUDED__
